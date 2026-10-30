@@ -1,0 +1,22 @@
+# Lo que NO se envía a Docker al construir la imagen (docker build).
+
+# Dependencias y compilación: se generan dentro de la imagen. Las de Windows además no sirven en Linux.
+node_modules/
+dist/
+
+# Tus datos locales (npm start) y secretos: nunca dentro de una imagen
+data/
+.env
+.env.*
+!.env.example
+
+# Lo que no hace falta para compilar
+tests/
+coverage/
+*.log
+*.md
+docs/
+.vscode/
+.git/
+.DS_Store
+Thumbs.db

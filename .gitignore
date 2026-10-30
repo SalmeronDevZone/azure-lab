@@ -1,0 +1,23 @@
+# Dependencias: se reinstalan con "npm ci" a partir de package-lock.json
+node_modules/
+
+# Versión de producción: la genera "npm run build"
+dist/
+
+# Tu nube guardada por el servidor (npm start). En Docker vive en el volumen azlab-data.
+data/
+
+# Configuración local y secretos (este proyecto no necesita ninguno, pero por si acaso)
+.env
+.env.*
+!.env.example
+
+# Registros, cobertura de pruebas y ficheros del sistema
+*.log
+coverage/
+.DS_Store
+Thumbs.db
+
+# Editor: solo se comparten las extensiones recomendadas
+.vscode/*
+!.vscode/extensions.json

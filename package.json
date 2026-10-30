@@ -1,0 +1,34 @@
+{
+  "name": "azure-lab-simulador",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Simulador local de Azure con academia DevOps guiada por niveles",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "start": "node server/server.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "jmespath": "^0.16.0",
+    "js-yaml": "^5.5.0",
+    "marked": "^18.1.2",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@types/jmespath": "^0.15.2",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.5",
+    "vitest": "^5.0.5"
+  }
+}

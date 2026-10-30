@@ -1,0 +1,23 @@
+# Azure Lab en un contenedor.
+#   Arrancar o actualizar:  docker compose up -d --build     → http://localhost:8090
+#   Parar:                  docker compose down               (tus datos se conservan)
+#   ¡Cuidado!               docker compose down -v            (borra también el volumen: pierdes tu nube)
+name: azure-lab
+
+services:
+  azure-lab:
+    build: .
+    image: azure-lab:latest
+    container_name: azure-lab
+    ports:
+      # puerto de tu PC : puerto del contenedor. 8090 porque el 8080 suele estar ocupado por otros proyectos.
+      # Sólo desde este PC. Para abrirla desde el móvil en tu wifi, cambia a "8090:8080".
+      - "127.0.0.1:8090:8080"
+    volumes:
+      # Tu nube y tu progreso: sobreviven a borrar, reiniciar o actualizar el contenedor.
+      - azlab-data:/data
+    restart: unless-stopped
+
+volumes:
+  azlab-data:
+    name: azlab-data
